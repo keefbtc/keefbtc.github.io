@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagem e Áudio</title>
+    <style>
+        /* Estilo para centralizar a imagem na tela */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000; /* Fundo preto para destacar a imagem */
+        }
+        img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 2px solid #fff; /* Borda branca para destacar a imagem */
+        }
+    </style>
+</head>
+<body>
+    <!-- Imagem que será exibida -->
+    <img src="e477f880-a4a9-11ee-8df3-1d2983d8814f.png.webp" alt="Imagem Grande">
+
+    <!-- Áudio que será reproduzido -->
+    <audio id="audio" src="audio.mp3" autoplay>
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <script>
+        // Script para garantir que o áudio comece a tocar assim que a imagem for carregada
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            audio.play().catch(error => {
+                console.log('Erro ao tentar reproduzir o áudio:', error);
+            });
+        });
+    </script>
+</body>
+</html>
